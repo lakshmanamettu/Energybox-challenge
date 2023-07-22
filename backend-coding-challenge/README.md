@@ -59,3 +59,11 @@ Bonus:
 
 - As a user I'd like to query all of the existing last_readings of a given sensor.
 
+Swagger URL: http://localhost:8082/swagger-ui.html#
+
+neo4j URL: http://localhost:7474/browser/
+
+
+MATCH (n:Gateway)
+DETACH DELETE n
+
