@@ -3,7 +3,6 @@ package com.energybox.backendcodingchallenge.controller;
 import com.energybox.backendcodingchallenge.domain.GatewayRequest;
 import com.energybox.backendcodingchallenge.domain.SensorList;
 import com.energybox.backendcodingchallenge.jpa.entity.Gateway;
-import com.energybox.backendcodingchallenge.jpa.entity.Sensor;
 import com.energybox.backendcodingchallenge.service.EnergyBoxService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -20,7 +19,6 @@ import java.util.List;
 public class GatewayController {
 
     EnergyBoxService energyBoxService;
-
 
     @ApiOperation( value = "Get all Gateways", response = List.class )
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE )

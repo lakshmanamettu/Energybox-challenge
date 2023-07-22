@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<neo4j.version>4.0.5</neo4j.version>
 	</properties>
 
 	<dependencies>
@@ -49,6 +50,7 @@
 		</dependency>
 
 		<!-- Swagger 2, UI documentation -->
+
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -60,6 +62,33 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>org.neo4j.test</groupId>
+			<artifactId>neo4j-harness</artifactId>
+			<version>${neo4j.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-nop</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.neo4j.procedure</groupId>
+			<artifactId>apoc</artifactId>
+			<version>4.0.0.13</version>
+			<scope>test</scope>
+		</dependency>-->
+
 	</dependencies>
 
 	<build>

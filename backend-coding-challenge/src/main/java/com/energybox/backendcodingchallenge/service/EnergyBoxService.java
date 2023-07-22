@@ -8,7 +8,7 @@ import com.energybox.backendcodingchallenge.jpa.entity.LastReading;
 import com.energybox.backendcodingchallenge.jpa.entity.Sensor;
 import com.energybox.backendcodingchallenge.jpa.repository.GatewayRepository;
 import com.energybox.backendcodingchallenge.jpa.repository.SensorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,15 +17,11 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class EnergyBoxService {
+
     private final SensorRepository sensorRepository;
     private final GatewayRepository gatewayRepository;
-
-    @Autowired
-    public EnergyBoxService(SensorRepository sensorRepository, GatewayRepository gatewayRepository) {
-        this.sensorRepository = sensorRepository;
-        this.gatewayRepository = gatewayRepository;
-    }
 
     public List<Sensor> getAllSensors() {
         return sensorRepository.findAll();
@@ -48,19 +44,6 @@ public class EnergyBoxService {
     }
 
     public Gateway createGateway(GatewayRequest gateway) {
-
-              /*  gateway.getSensors().stream()
-                        .map(s -> sensorRepository.findByType(s)
-                                .orElse(new Sensor(s,null,null)))
-                                .map(s -> {
-                                   Gateway gw =  s.getGateway();
-                                   if(null!=gw){
-                                       return gw.getName();
-                                   }else{
-                                       return null;
-                                   }
-                                }).findFirst()*/
-
         return gatewayRepository.save(new Gateway(gateway.getName(),null));
     }
 

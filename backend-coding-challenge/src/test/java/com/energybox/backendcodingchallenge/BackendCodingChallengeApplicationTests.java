@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BackendCodingChallengeApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void main() {
+		BackendCodingChallengeApplication.main(new String[] {});
 	}
 
 }
